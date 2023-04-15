@@ -1,9 +1,12 @@
-<a class="anchor" id="0"></a>
-# **Logistic Regression Classifier Tutorial with Python**
+---
+layout: single
+title:  "Logistic Regression Classifier Tutorial "
+---
+
+# **Logistic Regression Classifier Tutorial**
 
 # 로지스틱 회귀 분류기 __ 김정연
 
-<a class="anchor" id="0.1"></a>
 # **목차**
 
 
