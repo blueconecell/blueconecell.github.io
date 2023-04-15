@@ -1,14 +1,17 @@
-<a class="anchor" id="0"></a>
-# **Logistic Regression Classifier Tutorial with Python**
+---
+layout: single
+title:  "Logistic"
+---
+
+# **Logistic Regression Classifier Tutorial**
 
 # 로지스틱 회귀 분류기 __ 김정연
 
-<a class="anchor" id="0.1"></a>
-# **목차**
+# **__목차__**
 
 
-1.	[로지스틱 회귀 소개](#1)
-2.	[로지스틱 회귀 직관](#2)
+1.	[로지스틱 회귀 소개](#1-로지스틱-회귀-분석의-가정)
+2.	[로지스틱 회귀 분석 유형](#2-로지스틱-회귀-분석-유형)
 3.	[로지스틱 회귀 분석의 가정](#3)
 4.	[로지스틱 회귀 분석 유형](#4)
 5.	[Import libraries](#5)
@@ -31,10 +34,10 @@
 22. [참조](#22)
 
 
-# **1. 로지스틱 회귀 분석의 가정** <a class="anchor" id="1"></a>
+# **__1. 로지스틱 회귀 분석의 가정__**
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 로지스틱 회귀분석은 주어진 독립 변수의 선형 조합을 이용하여 종속 변수를 예측하는 통계 기법 중 하나입니다. 주로 **이진 분류(binary classification)** 문제에 사용되며, 예측값이 이산적인(discrete) 형태를 가집니다.
@@ -44,10 +47,10 @@
 로지스틱 회귀분석은 선형 회귀분석과 달리, 독립 변수와 종속 변수 사이의 관계가 선형이 아닐 수도 있습니다. 이를 위해 로지스틱 함수를 사용하여 비선형적인 형태의 관계를 모델링할 수 있습니다.
 
 
-# **2. 로지스틱 회귀 분석 유형** <a class="anchor" id="2"></a>
+# **__2. 로지스틱 회귀 분석 유형__**
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 통계학에서 **로지스틱 회귀 모델(Logistic Regression model)**은 주로 분류 목적으로 사용되는 널리 사용되는 통계 모델입니다. 즉, 일련의 관측치가 주어졌을 때, 로지스틱 회귀 알고리즘은 이러한 관측치를 두 개 이상의 이산적인 클래스로 분류하는 데 도움이 됩니다. 따라서 대상 변수는 이산적인 형태를 가집니다.
@@ -91,7 +94,7 @@ $$z = β0 + β1x1 + β2x2+….+ βnxn$$
 
 ![Sigmoid Function](https://miro.medium.com/max/970/1*Xu7B5y9gp0iL5ooBj7LtWw.png)
 
-## **의사결정 단**
+## **의사결정 단계**
 
 시그모이드 함수는 0과 1 사이의 확률 값을 반환합니다. 이 확률 값은 "0" 또는 "1"인 이산적인 클래스에 매핑됩니다. 이 확률 값을 이산적인 클래스(합격/불합격, 예/아니오, 참/거짓)에 매핑하기 위해 우리는 임계값을 선택합니다. 이 임계값을 의사결정 경계(Decision boundary)라고 합니다. 이 임계값 이상에서는 확률 값을 클래스 1로 매핑하고, 이하에서는 클래스 0으로 매핑합니다.
 
@@ -112,7 +115,7 @@ $$p < 0.5 => 클래스 = 0$$
 # **3. 로지스틱 회귀 분석의 가정** <a class="anchor" id="3"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 로지스틱 회귀 모델은 여러 가지 핵심 가정을 필요로 합니다. 이러한 가정은 다음과 같습니다:
 
@@ -133,7 +136,7 @@ $$p < 0.5 => 클래스 = 0$$
 # **4. 로지스틱 회귀 분석 유형** <a class="anchor" id="4"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 로지스틱 회귀 모델은 목표 변수 카테고리에 따라 세 가지 그룹으로 분류될 수 있습니다. 이 세 가지 그룹은 다음과 같이 설명됩니다:-
@@ -151,7 +154,7 @@ $$p < 0.5 => 클래스 = 0$$
 # **5. Import libraries** <a class="anchor" id="5"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 ```python
@@ -190,7 +193,7 @@ warnings.filterwarnings('ignore')
 # **6. Import dataset** <a class="anchor" id="6"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 ```python
@@ -202,7 +205,7 @@ df = pd.read_csv(data)
 # **7. 데이터 분석 탐색하기** <a class="anchor" id="7"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 
@@ -2863,7 +2866,7 @@ print('WindSpeed3pm outliers are values < {lowerboundary} or > {upperboundary}'.
 # **8. feature vector, 목표 변수 선언하기** <a class="anchor" id="8"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 ```python
@@ -2875,7 +2878,7 @@ y = df['RainTomorrow']
 # **9. training, test set 으로 분리하기** <a class="anchor" id="9"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 ```python
@@ -2904,7 +2907,7 @@ X_train.shape, X_test.shape
 # **10. Feature Engineering** <a class="anchor" id="10"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 **특성 공학(Feature Engineering)**은 원시 데이터(raw data)를 유용한 특성(feature)으로 변환하여 모델을 더 잘 이해하고 예측력을 높이는 과정입니다. 다음으로, 각각의 범주형 변수와 수치형 변수를 다시 나누어 표시하겠습니다.
@@ -4308,7 +4311,7 @@ X_test.head()
 # **11. Feature Scaling** <a class="anchor" id="11"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 ```python
@@ -4840,7 +4843,7 @@ X_train.describe()
 # **12. 모델 학습** <a class="anchor" id="12"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 `y_train, y_test`의 결측치를 처리해준다.
 
@@ -4898,7 +4901,7 @@ logreg.fit(X_train, y_train)
 # **13. 예측결과** <a class="anchor" id="13"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 ```python
@@ -4951,7 +4954,7 @@ logreg.predict_proba(X_test)[:,1]
 # **14. 정확도 점수 확인하기** <a class="anchor" id="14"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 ```python
@@ -5139,7 +5142,7 @@ print('Null accuracy score: {0:0.4f}'. format(null_accuracy))
 # **15. 혼동 행렬Confusion matrix** <a class="anchor" id="15"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 혼동 행렬(Confusion matrix)은 분류 알고리즘의 성능을 요약하는 도구입니다. 혼동 행렬은 분류 모델의 성능과 모델이 만드는 오류 유형에 대한 명확한 그림을 제공합니다. 이는 각 카테고리별로 올바른 예측과 부정확한 예측을 요약하여 표시됩니다.
@@ -5227,7 +5230,7 @@ sns.heatmap(cm_matrix, annot=True, fmt='d', cmap='YlGnBu')
 # **16. Classification metrices** <a class="anchor" id="16"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 ## Classification Report
 
@@ -5401,7 +5404,7 @@ print('Specificity : {0:0.4f}'.format(specificity))
 # **17. 임계값 레벨 조정** <a class="anchor" id="17"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 ```python
@@ -5747,7 +5750,7 @@ for i in range(1, 5):
 # **18. ROC - AUC** <a class="anchor" id="18"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 
@@ -5833,7 +5836,7 @@ print('Cross validated ROC AUC : {:.4f}'.format(Cross_validated_ROC_AUC))
 # **19. k-Fold Cross Validation** <a class="anchor" id="19"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 ```python
@@ -5866,7 +5869,7 @@ print('Average cross-validation score: {:.4f}'.format(scores.mean()))
 # **20. Hyperparameter Optimization using GridSearch CV** <a class="anchor" id="20"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 ```python
@@ -5959,7 +5962,7 @@ print('GridSearch CV score on test set: {0:0.4f}'.format(grid_search.score(X_tes
 # **21. 결과와 결론** <a class="anchor" id="21"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 1. 로지스틱 회귀 모델의 정확도 점수는 0.8501입니다. 따라서, 이 모델은 내일 오스트레일리아에서 비가 올지 여부를 예측하는 데 매우 잘 작동합니다.
 
@@ -5985,7 +5988,7 @@ print('GridSearch CV score on test set: {0:0.4f}'.format(grid_search.score(X_tes
 # **22. 참조** <a class="anchor" id="22"></a>
 
 
-[Table of Contents](#0.1)
+[Table of Contents](#목차)
 
 
 
