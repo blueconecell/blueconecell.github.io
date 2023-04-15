@@ -1,3 +1,8 @@
+---
+layout: single
+title:  "Logistic Regression"
+---
+
 <a class="anchor" id="zero"></a>
 # **Logistic Regression Classifier Tutorial with Python**
 
