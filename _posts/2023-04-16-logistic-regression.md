@@ -3,12 +3,10 @@ layout: single
 title:  "Logistic Regression"
 ---
 
-<a class="anchor" id="zero"></a>
 # **Logistic Regression Classifier Tutorial with Python**
 
 # 로지스틱 회귀 분류기 __ 김정연
 
-<a class="anchor" id="zero-one"></a>
 # **목차**
 
 1.	[로지스틱 회귀 소개](#one)
@@ -35,7 +33,6 @@ title:  "Logistic Regression"
 22. [참조](#twenty-two)
 
 
-# **1. 로지스틱 회귀 분석의 가정** <a class="anchor" id="one"></a>
 
 [목차로 돌아가기](#zero-one)
 
