@@ -12,32 +12,32 @@ title:  "Logistic Regression"
 
 # **목차**
 
-1. [로지스틱 회귀 소개](about:blank#1)
-2. [로지스틱 회귀 직관](about:blank#2)
-3. [로지스틱 회귀 분석의 가정](about:blank#3)
-4. [로지스틱 회귀 분석 유형](about:blank#4)
-5. [Import libraries](about:blank#5)
-6. [Import dataset](about:blank#6)
-7. [데이터 분석 탐색하기](about:blank#7)
-8. [feature vector, 목표 변수 선언하기](about:blank#8)
-9. [training, test set 으로 분리하기](about:blank#9)
-10. [Feature engineering](about:blank#10)
-11. [Feature scaling](about:blank#11)
-12. [모델 학습](about:blank#12)
-13. [예측결과](about:blank#13)
-14. [정확도 점수 확인하기](about:blank#14)
-15. [혼동 행렬Confusion matrix](about:blank#15)
-16. [Classification metrices](about:blank#16)
-17. [임계값 레벨 조정](about:blank#17)
-18. [ROC - AUC](about:blank#18)
-19. [k-Fold Cross Validation](about:blank#19)
-20. [Hyperparameter optimization using GridSearch CV](about:blank#20)
-21. [결과와 결론](about:blank#21)
-22. [참조](about:blank#22)
+1. [로지스틱 회귀 분석의 가정](#1-로지스틱-회귀-분석의-가정)
+2. [로지스틱 회귀 분석 유형](#2-로지스틱-회귀-분석-유형)
+3. [로지스틱 회귀 분석의 가정](#3-로지스틱-회귀-분석의-가정)
+4. [로지스틱 회귀 분석 유형](#4-로지스틱-회귀-분석-유형)
+5. [Import libraries](#5-import-libraries)
+6. [Import dataset](#6-import-dataset)
+7. [데이터 분석 탐색하기](#7-데이터-분석-탐색하기)
+8. [feature vector, 목표 변수 선언하기](#8-feature-vector-목표-변수-선언하기)
+9. [training, test set 으로 분리하기](#9-training-test-set-으로-분리하기)
+10. [Feature engineering](#10-feature-engineering)
+11. [Feature scaling](#11-feature-scaling)
+12. [모델 학습](#12-모델-학습)
+13. [예측결과](#13-예측결과)
+14. [정확도 점수 확인하기](#14-정확도-점수-확인하기)
+15. [혼동 행렬Confusion matrix](#15-혼동-행렬confusion-matrix)
+16. [Classification metrices](#16-classification-metrices)
+17. [임계값 레벨 조정](#17-임계값-레벨-조정)
+18. [ROC - AUC](#18-roc---auc)
+19. [k-Fold Cross Validation](#19-k-fold-cross-validation)
+20. [Hyperparameter optimization using GridSearch CV](#20-hyperparameter-optimization-using-gridsearch-cv)
+21. [결과와 결론](#21-결과와-결론)
+22. [참조](#22-참조)
 
 # **1. 로지스틱 회귀 분석의 가정**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 로지스틱 회귀분석은 주어진 독립 변수의 선형 조합을 이용하여 종속 변수를 예측하는 통계 기법 중 하나입니다. 주로 **이진 분류(binary classification)** 문제에 사용되며, 예측값이 이산적인(discrete) 형태를 가집니다.
 
@@ -47,7 +47,7 @@ title:  "Logistic Regression"
 
 # **2. 로지스틱 회귀 분석 유형**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 통계학에서 **로지스틱 회귀 모델(Logistic Regression model)**은 주로 분류 목적으로 사용되는 널리 사용되는 통계 모델입니다. 즉, 일련의 관측치가 주어졌을 때, 로지스틱 회귀 알고리즘은 이러한 관측치를 두 개 이상의 이산적인 클래스로 분류하는 데 도움이 됩니다. 따라서 대상 변수는 이산적인 형태를 가집니다.
 
@@ -109,7 +109,7 @@ Decision boundary in sigmoid function
 
 # **3. 로지스틱 회귀 분석의 가정**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 로지스틱 회귀 모델은 여러 가지 핵심 가정을 필요로 합니다. 이러한 가정은 다음과 같습니다:
 
@@ -121,7 +121,7 @@ Decision boundary in sigmoid function
 
 # **4. 로지스틱 회귀 분석 유형**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 로지스틱 회귀 모델은 목표 변수 카테고리에 따라 세 가지 그룹으로 분류될 수 있습니다. 이 세 가지 그룹은 다음과 같이 설명됩니다:-
 
@@ -139,7 +139,7 @@ Decision boundary in sigmoid function
 
 # **5. Import libraries**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 ```python
 # This Python 3 environment comes with many helpful analytics libraries installed# It is defined by the kaggle/python docker image: https://github.com/kaggle/docker-python# For example, here's several helpful packages to load inimport numpy as np # linear algebraimport pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)import matplotlib.pyplot as plt # data visualizationimport seaborn as sns # statistical data visualization%matplotlib inline# Input data files are available in the "../input/" directory.# For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directoryimport osfor dirname, _, filenames in os.walk('/kaggle/input'):    for filename in filenames:        print(os.path.join(dirname, filename))# Any results you write to the current directory are saved as output.
@@ -156,7 +156,7 @@ import warningswarnings.filterwarnings('ignore')
 
 # **6. Import dataset**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 ```python
 data = '/kaggle/input/weather-dataset-rattle-package/weatherAUS.csv'df = pd.read_csv(data)
@@ -164,7 +164,7 @@ data = '/kaggle/input/weather-dataset-rattle-package/weatherAUS.csv'df = pd.read
 
 # **7. 데이터 분석 탐색하기**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 ```python
 # view dimensions of datasetdf.shape
@@ -1363,7 +1363,7 @@ WindSpeed3pm outliers are values < -20.0 or > 57.0
 
 # **8. feature vector, 목표 변수 선언하기**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 ```python
 X = df.drop(['RainTomorrow'], axis=1)y = df['RainTomorrow']
@@ -1371,7 +1371,7 @@ X = df.drop(['RainTomorrow'], axis=1)y = df['RainTomorrow']
 
 # **9. training, test set 으로 분리하기**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 ```python
 # split X and y into training and testing setsfrom sklearn.model_selection import train_test_splitX_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
@@ -1388,7 +1388,7 @@ X = df.drop(['RainTomorrow'], axis=1)y = df['RainTomorrow']
 
 # **10. Feature Engineering**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 **특성 공학(Feature Engineering)**은 원시 데이터(raw data)를 유용한 특성(feature)으로 변환하여 모델을 더 잘 이해하고 예측력을 높이는 과정입니다. 다음으로, 각각의 범주형 변수와 수치형 변수를 다시 나누어 표시하겠습니다.
 
@@ -1889,7 +1889,7 @@ X_test.head()
 
 # **11. Feature Scaling**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 ```python
 X_train.describe()
@@ -1945,7 +1945,7 @@ X_train.describe()
 
 # **12. 모델 학습**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 `y_train, y_test`의 결측치를 처리해준다.
 
@@ -1970,7 +1970,7 @@ LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
 
 # **13. 예측결과**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 ```python
 y_pred_test = logreg.predict(X_test)y_pred_test
@@ -2007,7 +2007,7 @@ array([0.16781988, 0.25452103, 0.20135101, ..., 0.57974172, 0.34253009,
 
 # **14. 정확도 점수 확인하기**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 ```python
 from sklearn.metrics import accuracy_scoreprint('Model accuracy score: {0:0.4f}'. format(accuracy_score(y_test, y_pred_test)))
@@ -2152,7 +2152,7 @@ Null accuracy score: 0.7812
 
 # **15. 혼동 행렬Confusion matrix**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 혼동 행렬(Confusion matrix)은 분류 알고리즘의 성능을 요약하는 도구입니다. 혼동 행렬은 분류 모델의 성능과 모델이 만드는 오류 유형에 대한 명확한 그림을 제공합니다. 이는 각 카테고리별로 올바른 예측과 부정확한 예측을 요약하여 표시됩니다.
 
@@ -2212,7 +2212,7 @@ False Negatives (실제 양성:1이지만 예측 음성:0) - 3087 (2형 오류)
 
 # **16. Classification metrices**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 ## Classification Report
 
@@ -2345,7 +2345,7 @@ Specificity : 0.7263
 
 # **17. 임계값 레벨 조정**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 ```python
 # print the first 10 predicted probabilities of two classes- 0 and 1y_pred_prob = logreg.predict_proba(X_test)[0:10]y_pred_prob
@@ -2526,7 +2526,7 @@ With 0.4 threshold the Confusion Matrix is
 
 # **18. ROC - AUC**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 ## ROC 곡선
 
@@ -2580,7 +2580,7 @@ Cross validated ROC AUC : 0.8675
 
 # **19. k-Fold Cross Validation**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 ```python
 # Applying 5-Fold Cross Validationfrom sklearn.model_selection import cross_val_scorescores = cross_val_score(logreg, X_train, y_train, cv = 5, scoring='accuracy')print('Cross-validation scores:{}'.format(scores))
@@ -2606,7 +2606,7 @@ Average cross-validation score: 0.8481
 
 # **20. Hyperparameter Optimization using GridSearch CV**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 ```python
 from sklearn.model_selection import GridSearchCVparameters = [{'penalty':['l1','l2']},              {'C':[1, 10, 100, 1000]}]grid_search = GridSearchCV(estimator = logreg,                           param_grid = parameters,                           scoring = 'accuracy',                           cv = 5,                           verbose=0)grid_search.fit(X_train, y_train)
@@ -2666,7 +2666,7 @@ GridSearch CV score on test set: 0.8488
 
 # **21. 결과와 결론**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 1. 로지스틱 회귀 모델의 정확도 점수는 0.8501입니다. 따라서, 이 모델은 내일 오스트레일리아에서 비가 올지 여부를 예측하는 데 매우 잘 작동합니다.
 2. 일부 관측치는 내일 비가 올 것으로 예측하고 있으며, 대부분의 관측치는 내일 비가 오지 않을 것으로 예측하고 있습니다.
@@ -2681,7 +2681,7 @@ GridSearch CV score on test set: 0.8488
 
 # **22. 참조**
 
-[Table of Contents](about:blank#0.1)
+[Table of Contents](#목차)
 
 The work done in this project is inspired from following books and websites:-
 
@@ -2698,4 +2698,4 @@ The work done in this project is inspired from following books and websites:-
 11. https://www.kaggle.com/neisha/heart-disease-prediction-using-logistic-regression
 12. https://www.ritchieng.com/machine-learning-evaluate-classification-model/
 
-[Go to Top](about:blank#0)
+[Go to Top](#목차)
